@@ -9,12 +9,13 @@ const requireLogin =  require("../middleware/requireLogin")
 const crypto = require('crypto')
 const nodemailer = require('nodemailer')
 const sendgridTransport = require('nodemailer-sendgrid-transport')
+const {SENDGRID_API, EMAIL} = require("../config/keys")
 
-//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
+
 
 const transporter = nodemailer.createTransport(sendgridTransport({
     auth:{
-        api_key:"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"
+        api_key:SENDGRID_API
     }
 }))
 
@@ -112,9 +113,9 @@ router.post('/reset-password',(req,res)=>{
                 html:`
                 <p>You requested for password reset</p
                 <h5>Click the below button to reset password</h5>
-                <button className="btn waves-effect waves-light #64b5f6 blue darken-1"  ><a href="https://instagram-64.herokuapp.com/reset/${token}">Reset Password</a>
+                <button className="btn waves-effect waves-light #64b5f6 blue darken-1"  ><a href="${EMAIL}/reset/${token}">Reset Password</a>
                 </button>
-                <button><a href="https://instagram-64.herokuapp.com/reset/${token}>Click Here </a></button>`
+                <button><a href="${EMAIL}/reset/${token}>Click Here </a></button>`
             })
             res.json({message:"check the eamil"})
            }))
