@@ -131,13 +131,23 @@ const Home = () => {
         <div className="home">
             {
                 data.map(item=>{
+                    console.log(item)
                     return(
                         <div className="card home-card" key={item._id}>
-                        <h5 style={{padding:'10px'}}> <Link to={item.postedBy._id!== state._id?"/profile/"+item.postedBy._id:"/profile"}>{item.postedBy.name}</Link>  {item.postedBy._id=== state._id
-                        &&<i className="material-icons" style={{float:"right"}} 
-                        onClick={()=>deletePost(item._id)}
-                        >delete</i>
-                        } </h5>
+                        <div className="flex1">
+                                <Link to={item.postedBy._id !== state._id ? "/profile/" + item.postedBy._id : "/profile"}>
+                                <img   className="img2" 
+                                
+                                    src={item.postedBy.pic} alt="Profile photo"
+                                />
+                                </Link>
+
+                                <h5 className="hedi" style={{ padding: '10px' }}> <Link to={item.postedBy._id !== state._id ? "/profile/" + item.postedBy._id : "/profile"}>{item.postedBy.name}</Link>  {item.postedBy._id === state._id
+                                    && <i className="material-icons delete" style={{ float: "right" }}
+                                        onClick={() => deletePost(item._id)}
+                                    >delete</i>
+                                } </h5>
+                            </div>
                         <div className="card-image">
                             <img src={item.photo} />
                         </div>
