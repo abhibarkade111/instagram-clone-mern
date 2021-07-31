@@ -131,7 +131,7 @@ const Home = () => {
         <div className="home">
             {
                 data.map(item=>{
-                    console.log(item)
+                    // console.log(item)
                     return(
                         <div className="card home-card" key={item._id}>
                         <div className="flex1">

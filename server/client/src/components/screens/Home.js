@@ -127,12 +127,12 @@ const Home = () => {
     //         setData(newData)
     //     })
     // }
-    console.log(state)
+    // console.log(state)
     return (
         <div className="home">
             {
                 data.map(item => {
-                    console.log(item)
+                    // console.log(item)
                     return (
 
                         <div className="card home-card" key={item._id}>

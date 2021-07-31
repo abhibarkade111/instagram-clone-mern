@@ -100,7 +100,7 @@ const Navbar = () => {
           <input type="text" placeholder="Search users" value={search} onChange={(e) => fetchUsers(e.target.value)} />
           <ul style={{ color: 'black' }} className="collection">
             {userDetails.map(item => {
-              console.log(item)
+              // console.log(item)
               return <Link to={item._id !== state._id ? "/profile/" + item._id : '/profile'} onClick={() => {
                 M.Modal.getInstance(searchModal.current).close()
                 setSearch('')
