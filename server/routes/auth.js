@@ -115,7 +115,7 @@ router.post('/reset-password',(req,res)=>{
                 <h5>Click the below button to reset password</h5>
                 <button className="btn waves-effect waves-light #64b5f6 blue darken-1"  ><a href="${EMAIL}/reset/${token}">Reset Password</a>
                 </button>
-                <button><a href="${EMAIL}/reset/${token}>Click Here </a></button>`
+                `
             })
             res.json({message:"check the eamil"})
            }))
